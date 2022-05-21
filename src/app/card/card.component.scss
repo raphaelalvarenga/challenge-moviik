@@ -1,0 +1,22 @@
+@import "/src/styles.scss";
+
+.card-container {
+    background: $color-secondary;
+    padding: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.card-body {
+    margin-bottom: 20px;
+}
+
+.quote-en {
+    text-align: justify;
+}
+
+.card-bottom {
+    display: flex;
+    justify-content: space-between;
+}
