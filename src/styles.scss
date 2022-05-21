@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+
+$font-stack: Arial;
+$color-primary: #31e694;
+$color-secondary: #fafafa;
+$color-tertiary: #333;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $font-stack;
+}
