@@ -9,18 +9,18 @@
 }
 
 .letter-container:hover .letter-img {
-    margin-left: -150px;
-    margin-top: -80px;
+    margin-left: -200px;
+    margin-top: -100px;
     transform: rotateZ(9.4deg);
-    // width: 880px;
+    width: 180%;
 }
 
 .letter-container:hover .quote-en {
     transform: rotateZ(0);
-    // font-size: 12.8px;
-    margin-top: -380px;
-    margin-left: 122px;
-    // width: 320px;
+    font-size: 81.5%;
+    margin-top: -420px;
+    margin-left: 110px;
+    width: 61%;
 }
 
 .letter-body {
@@ -31,19 +31,20 @@
 
 .letter-img {
     transition: 0.3s;
-    width: 800px;
+    width: 160%;
     margin-left: -150px;
     margin-top: -90px;
 }
 
 .quote-en {
+    border: solid transparent;
     transition: 0.3s;
     margin-top: -380px;
     margin-left: 120px;
-    width: 300px;
+    width: 60%;
     transform: rotateZ(-10deg);
     font-family: $font-manual-quote;
-    font-size: 12px;
+    font-size: 80%;
 }
 
 .letter-bottom {
@@ -54,6 +55,21 @@
     font-size: 40px;
     gap: 20px;
     padding: 0 20px;
+}
+
+.likes {
+    color: $color-tertiary;
+}
+
+.icon-container {
+    color: #ccc;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.icon-container:hover {
+    color: $color-tertiary;
+    transform: rotateZ(-20deg);
 }
 
 @media only screen and (min-width: 1000px) {

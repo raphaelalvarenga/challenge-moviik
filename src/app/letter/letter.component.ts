@@ -10,9 +10,15 @@ import { Quote } from "interfaces/quote.interface";
 export class LetterComponent implements OnInit {
     @Input() quote: Quote = { id: "", author: "", en: "" };
 
+    liked = false;
+
     faThumbsUp = faThumbsUp;
 
     constructor() {}
 
     ngOnInit(): void {}
+
+    toggleLike() {
+        this.liked = !this.liked;
+    }
 }

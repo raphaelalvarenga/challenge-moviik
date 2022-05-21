@@ -6,7 +6,9 @@
         </div>
     </div>
     <div class="letter-bottom">
-        <div>1,902</div>
-        <div><fa-icon [icon]="faThumbsUp"></fa-icon></div>
+        <div style="color: #333">1,902</div>
+        <div class="icon-container" [ngStyle]="{ color: liked ? 'rgb(20, 80, 180)' : '#ccc' }" (click)="toggleLike()">
+            <fa-icon [icon]="faThumbsUp"></fa-icon>
+        </div>
     </div>
 </div>

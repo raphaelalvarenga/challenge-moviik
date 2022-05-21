@@ -11,3 +11,11 @@
 main {
     padding: 0 10px;
 }
+
+.letters {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-between;
+    row-gap: 100px;
+    padding: 20px;
+}

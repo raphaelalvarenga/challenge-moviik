@@ -2,5 +2,8 @@
 
 <main>
     <app-card *ngFor="let quote of quotes" [quote]="quote"></app-card>
-    <app-letter *ngFor="let quote of quotes" [quote]="quote"></app-letter>
+
+    <div class="letters">
+        <app-letter *ngFor="let quote of quotes" [quote]="quote"></app-letter>
+    </div>
 </main>
