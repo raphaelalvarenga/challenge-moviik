@@ -1,6 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 
-$font-stack: Arial;
+@font-face {
+    font-family: "IndieFlower";
+    src: url("./assets/fonts/Indie_Flower/IndieFlower-Regular.ttf");
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url("./assets/fonts/Roboto/Roboto-Regular.ttf");
+}
+
+$font-manual-quote: IndieFlower;
+$font-primary: Roboto;
 $color-primary: #31e694;
 $color-secondary: #fafafa;
 $color-tertiary: #333;
@@ -9,5 +20,5 @@ $color-tertiary: #333;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: $font-stack;
+    font-family: $font-primary, Arial, Helvetica, sans-serif;
 }
