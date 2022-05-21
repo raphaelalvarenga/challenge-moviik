@@ -8,18 +8,18 @@
 }
 
 .letter-container:hover .letter-img {
-    margin-left: -210px;
-    margin-top: -120px;
+    margin-left: -150px;
+    margin-top: -80px;
     transform: rotateZ(9.4deg);
-    width: 920px;
+    // width: 880px;
 }
 
 .letter-container:hover .quote-en {
     transform: rotateZ(0);
-    font-size: 12.8px;
-    margin-top: -430px;
-    margin-left: 100px;
-    width: 320px;
+    // font-size: 12.8px;
+    margin-top: -380px;
+    margin-left: 122px;
+    // width: 320px;
 }
 
 .letter-body {
@@ -29,14 +29,14 @@
 }
 
 .letter-img {
-    transition: 1s;
+    transition: 0.3s;
     width: 800px;
     margin-left: -150px;
     margin-top: -90px;
 }
 
 .quote-en {
-    transition: 1s;
+    transition: 0.3s;
     margin-top: -380px;
     margin-left: 120px;
     width: 300px;
