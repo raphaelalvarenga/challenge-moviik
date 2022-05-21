@@ -1,6 +1,7 @@
 @import "../../styles.scss";
 
 .letter-container {
+    display: none;
     width: 500px;
     box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
     border-radius: 5px;
@@ -53,4 +54,10 @@
     font-size: 40px;
     gap: 20px;
     padding: 0 20px;
+}
+
+@media only screen and (min-width: 1000px) {
+    .letter-container {
+        display: block;
+    }
 }
