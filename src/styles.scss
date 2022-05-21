@@ -15,6 +15,7 @@ $font-primary: Roboto;
 $color-primary: #31e694;
 $color-secondary: #fafafa;
 $color-tertiary: #333;
+$mobile-background: "./assets/images/quote-1280x850.jpg";
 
 * {
     margin: 0;
@@ -22,3 +23,13 @@ $color-tertiary: #333;
     box-sizing: border-box;
     font-family: $font-primary, Arial, Helvetica, sans-serif;
 }
+
+body {
+    background: url($mobile-background) fixed -150px -100px;
+}
+
+// @media only screen and (min-width: 1000px) {
+//     body {
+//         background: blue;
+//     }
+// }
