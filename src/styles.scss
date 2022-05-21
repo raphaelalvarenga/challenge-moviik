@@ -24,12 +24,8 @@ $mobile-background: "./assets/images/quote-1280x850.jpg";
     font-family: $font-primary, Arial, Helvetica, sans-serif;
 }
 
-body {
-    background: url($mobile-background) fixed -150px -100px;
+@media only screen and (max-width: 999px) {
+    body {
+        background: url($mobile-background) fixed -150px -100px;
+    }
 }
-
-// @media only screen and (min-width: 1000px) {
-//     body {
-//         background: blue;
-//     }
-// }
