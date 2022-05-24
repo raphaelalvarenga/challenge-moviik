@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Store } from "@ngrx/store";
 import { Quote } from "interfaces/quote.interface";
-import { filter, map, Observable, of, toArray } from "rxjs";
+import { map, Observable, of } from "rxjs";
 import { ApiService } from "./services/api.service";
 import { quoteAction } from "./states/quote/quote.action";
 
@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
 
     quotes$: Observable<Quote[]> = of([]);
     filterRange = [0, 10];
-    isPreviousButtonDisabled = false;
+    isPreviousButtonDisabled = true;
 
     constructor(private apiService: ApiService, private store: Store<{ quoteReducer: Quote[] }>) {
         this.quotes$ = this.store.select("quoteReducer");
@@ -32,21 +32,17 @@ export class AppComponent implements OnInit {
 
     filterQuotes() {
         return this.quotes$.pipe(
-            map(quotes =>
-                quotes.filter((quote, index) => {
-                    return index > this.filterRange[0] && index <= this.filterRange[1];
-                })
-            )
+            map(quotes => quotes.filter((quote, index) => index >= this.filterRange[0] && index < this.filterRange[1]))
         );
     }
 
     previousPage() {
         const [first, last] = this.filterRange;
 
-        if (first >= 0) {
-            this.filterRange = [first - 10, last - 10];
-            this.filterQuotes();
-        } else {
+        this.filterRange = [first - 10, last - 10];
+        this.filterQuotes();
+
+        if (first - 10 === 0) {
             this.isPreviousButtonDisabled = true;
         }
     }
