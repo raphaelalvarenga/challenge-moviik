@@ -14,8 +14,20 @@ main {
 
 .letters {
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto;
     justify-content: space-between;
     row-gap: 100px;
     padding: 20px;
+}
+
+@media only screen and (min-width: 1100px) {
+    .letters {
+        grid-template-columns: auto auto;
+    }
+}
+
+@media only screen and (min-width: 1600px) {
+    .letters {
+        grid-template-columns: auto auto auto;
+    }
 }
