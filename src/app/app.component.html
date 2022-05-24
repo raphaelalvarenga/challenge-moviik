@@ -1,13 +1,14 @@
 <div id="background"></div>
 
-<app-topbar></app-topbar>
+<app-topbar [searchValue]="searchValue" (searchValueChange)="handleSearchChange($event)"></app-topbar>
+<!-- <input type="text" placeholder="Search..." [value]="searchValue" (keyup)="handleSearchChange()" /> -->
 
 <app-pagination
     [isPreviousButtonDisabled]="isPreviousButtonDisabled"
     (setPreviousPage)="previousPage()"
     (setNextPage)="nextPage()"
 ></app-pagination>
-
+{{ searchValue }}
 <main>
     <app-card *ngFor="let quote of filterQuotes() | async" [quote]="quote"></app-card>
 

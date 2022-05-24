@@ -16,6 +16,7 @@ export class AppComponent implements OnInit {
     quotes$: Observable<Quote[]> = of([]);
     filterRange = [0, 10];
     isPreviousButtonDisabled = true;
+    searchValue = "";
 
     constructor(private apiService: ApiService, private store: Store<{ quoteReducer: Quote[] }>) {
         this.quotes$ = this.store.select("quoteReducer");
@@ -32,6 +33,19 @@ export class AppComponent implements OnInit {
 
     filterQuotes() {
         return this.quotes$.pipe(
+            map(quotes =>
+                this.convertToLowerCaseAndTrim(this.searchValue)
+                    ? quotes.filter(
+                          quote =>
+                              this.convertToLowerCaseAndTrim(quote.author).includes(
+                                  this.convertToLowerCaseAndTrim(this.searchValue)
+                              ) ||
+                              this.convertToLowerCaseAndTrim(quote.en).includes(
+                                  this.convertToLowerCaseAndTrim(this.searchValue)
+                              )
+                      )
+                    : quotes
+            ),
             map(quotes => quotes.filter((quote, index) => index >= this.filterRange[0] && index < this.filterRange[1]))
         );
     }
@@ -53,5 +67,14 @@ export class AppComponent implements OnInit {
         this.filterRange = [first + 10, last + 10];
         this.filterQuotes();
         this.isPreviousButtonDisabled = false;
+    }
+
+    convertToLowerCaseAndTrim(value: string) {
+        return value.trim().toLowerCase();
+    }
+
+    handleSearchChange(value: string) {
+        this.searchValue = value;
+        this.filterQuotes();
     }
 }
