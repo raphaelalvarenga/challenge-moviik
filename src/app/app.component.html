@@ -8,7 +8,7 @@
     (setPreviousPage)="previousPage()"
     (setNextPage)="nextPage()"
 ></app-pagination>
-{{ searchValue }}
+
 <main>
     <app-card *ngFor="let quote of filterQuotes() | async" [quote]="quote"></app-card>
 
