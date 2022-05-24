@@ -6,6 +6,8 @@
     </div>
     <div class="card-bottom">
         <div class="quote-author">{{ quote.author }}</div>
-        <div class="quote-rating"><fa-icon [icon]="faThumbsUp"></fa-icon></div>
+        <div class="quote-rating" [ngStyle]="{ color: liked ? 'rgb(20, 80, 180)' : '#ccc' }" (click)="toggleLike()">
+            <fa-icon [icon]="faThumbsUp"></fa-icon>
+        </div>
     </div>
 </div>

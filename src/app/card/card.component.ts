@@ -9,10 +9,15 @@ import { faThumbsUp } from "@fortawesome/free-regular-svg-icons";
 })
 export class CardComponent implements OnInit {
     @Input() quote: Quote = { id: "", author: "", en: "" };
+    liked = false;
 
     faThumbsUp = faThumbsUp;
 
     constructor() {}
 
     ngOnInit(): void {}
+
+    toggleLike() {
+        this.liked = !this.liked;
+    }
 }
