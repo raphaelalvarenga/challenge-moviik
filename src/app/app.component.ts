@@ -15,11 +15,11 @@ export class AppComponent implements OnInit {
     quotes: Quote[] = [];
 
     ngOnInit(): void {
-        // this.apiService.getQuotes().subscribe(
-        //     result => {
+        // this.apiService.getQuotes().subscribe({
+        //     next: result => {
         //         this.quotes = result;
         //     },
-        //     error => console.log(error)
-        // );
+        //     error: erro => console.log(erro),
+        // });
     }
 }
