@@ -1,9 +1,9 @@
 <div id="background"></div>
 
 <main>
-    <app-card *ngFor="let quote of quotes$ | async" [quote]="quote"></app-card>
+    <app-card *ngFor="let quote of filterQuotes() | async" [quote]="quote"></app-card>
 
     <div class="letters">
-        <app-letter *ngFor="let quote of quotes$ | async" [quote]="quote"></app-letter>
+        <app-letter *ngFor="let quote of filterQuotes() | async" [quote]="quote"></app-letter>
     </div>
 </main>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Store } from "@ngrx/store";
 import { Quote } from "interfaces/quote.interface";
-import { Observable, of } from "rxjs";
+import { filter, map, Observable, of, toArray } from "rxjs";
 import { ApiService } from "./services/api.service";
 import { quoteAction } from "./states/quote/quote.action";
 
@@ -14,6 +14,7 @@ export class AppComponent implements OnInit {
     title = "challenge-moviik";
 
     quotes$: Observable<Quote[]> = of([]);
+    filteredQuotes: Quote[] = [];
 
     constructor(private apiService: ApiService, private store: Store<{ quoteReducer: Quote[] }>) {
         this.quotes$ = this.store.select("quoteReducer");
@@ -26,5 +27,9 @@ export class AppComponent implements OnInit {
             },
             error: erro => console.log(erro),
         });
+    }
+
+    filterQuotes() {
+        return this.quotes$.pipe(map(quotes => quotes.filter((quote, index) => index < 3)));
     }
 }

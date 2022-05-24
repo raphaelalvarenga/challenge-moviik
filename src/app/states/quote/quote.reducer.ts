@@ -6,8 +6,5 @@ const initialState: Quote[] = [];
 
 export const quoteReducer = createReducer(
     initialState,
-    on(quoteAction, (state, { quotes }) => {
-        console.log(quotes);
-        return quotes;
-    })
+    on(quoteAction, (state, { quotes }) => quotes)
 );
