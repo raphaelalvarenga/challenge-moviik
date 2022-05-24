@@ -1,0 +1,23 @@
+@import "../../styles.scss";
+
+.container {
+    display: flex;
+    justify-content: flex-end;
+    column-gap: 10px;
+}
+
+button {
+    padding: 10px;
+    font-size: 18px;
+    background: $color-primary;
+    color: $color-secondary;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 2px 2px 8px rgb(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background: $color-primary-hover;
+}

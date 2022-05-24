@@ -1,7 +1,10 @@
 <div id="background"></div>
 
-<button (click)="previousPage()" [disabled]="isPreviousButtonDisabled">Previous</button
-><button (click)="nextPage()">Next</button>
+<app-pagination
+    [isPreviousButtonDisabled]="isPreviousButtonDisabled"
+    (setPreviousPage)="previousPage()"
+    (setNextPage)="nextPage()"
+></app-pagination>
 
 <main>
     <app-card *ngFor="let quote of filterQuotes() | async" [quote]="quote"></app-card>
@@ -10,3 +13,9 @@
         <app-letter *ngFor="let quote of filterQuotes() | async" [quote]="quote"></app-letter>
     </div>
 </main>
+
+<app-pagination
+    [isPreviousButtonDisabled]="isPreviousButtonDisabled"
+    (setPreviousPage)="previousPage()"
+    (setNextPage)="nextPage()"
+></app-pagination>

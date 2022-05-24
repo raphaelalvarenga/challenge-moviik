@@ -9,9 +9,10 @@ import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 import { LetterComponent } from "./letter/letter.component";
 import { StoreModule } from "@ngrx/store";
 import { quoteReducer } from "./states/quote/quote.reducer";
+import { PaginationComponent } from "./pagination/pagination.component";
 
 @NgModule({
-    declarations: [AppComponent, CardComponent, LetterComponent],
+    declarations: [AppComponent, CardComponent, LetterComponent, PaginationComponent],
     imports: [
         BrowserModule,
         AppRoutingModule,
