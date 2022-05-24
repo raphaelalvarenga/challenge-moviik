@@ -16,13 +16,13 @@ export class AppComponent implements OnInit {
     quotes$: Observable<Quote[]> = of([]);
 
     constructor(private apiService: ApiService, private store: Store<{ quoteReducer: Quote[] }>) {
-        // this.quotes$ = this.store.select("quoteReducer")
+        this.quotes$ = this.store.select("quoteReducer");
     }
 
     ngOnInit(): void {
         this.apiService.getQuotes().subscribe({
-            next: result => {
-                this.store.dispatch(quoteAction());
+            next: quotes => {
+                this.store.dispatch(quoteAction({ quotes }));
             },
             error: erro => console.log(erro),
         });

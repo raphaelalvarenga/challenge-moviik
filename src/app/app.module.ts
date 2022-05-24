@@ -12,7 +12,13 @@ import { quoteReducer } from "./states/quote/quote.reducer";
 
 @NgModule({
     declarations: [AppComponent, CardComponent, LetterComponent],
-    imports: [BrowserModule, AppRoutingModule, FontAwesomeModule, HttpClientModule, StoreModule.forRoot(quoteReducer)],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FontAwesomeModule,
+        HttpClientModule,
+        StoreModule.forRoot({ quoteReducer }),
+    ],
     providers: [],
     bootstrap: [AppComponent],
 })
