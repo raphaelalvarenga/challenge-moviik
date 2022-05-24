@@ -10,9 +10,10 @@ import { LetterComponent } from "./letter/letter.component";
 import { StoreModule } from "@ngrx/store";
 import { quoteReducer } from "./states/quote/quote.reducer";
 import { PaginationComponent } from "./pagination/pagination.component";
+import { TopbarComponent } from "./topbar/topbar.component";
 
 @NgModule({
-    declarations: [AppComponent, CardComponent, LetterComponent, PaginationComponent],
+    declarations: [AppComponent, CardComponent, LetterComponent, PaginationComponent, TopbarComponent],
     imports: [
         BrowserModule,
         AppRoutingModule,
